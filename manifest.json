@@ -9,7 +9,8 @@
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_title": "Preview social cards for this page"
+    "default_title": "Preview social cards for this page",
+    "default_popup": "app.html"
   },
   "permissions": [
     "activeTab"
