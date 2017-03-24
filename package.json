@@ -1,0 +1,14 @@
+{
+  "name": "social-card-preview",
+  "version": "0.1.0",
+  "description": "Preview social media link cards",
+  "main": "app.js",
+  "author": "Jim Newbery <james@tinnedfruit.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "devDependencies": {
+    "nightwatch": "^0.9.14"
+  }
+}
