@@ -1,20 +1,20 @@
-var chromedriver = require('chromedriver');
-var server = require('./server.js');
-var fixtures = require('./fixtures.js');
+var chromedriver = require('chromedriver')
+var server = require('./server.js')
+var fixtures = require('./fixtures.js')
 
 module.exports = {
-  before: function(done) {
-    chromedriver.start();
+  before: function (done) {
+    chromedriver.start()
     console.log('Starting server.')
-    server.start(done);
+    server.start(done)
   },
-  after: function(done) {
-    chromedriver.stop();
+  after: function (done) {
+    chromedriver.stop()
     console.log('Stopping server.')
-    server.stop(done);
+    server.stop(done)
   },
-  initApp: function(data) {
-    window.init(data);
+  initApp: function (data) {
+    window.init(data)
   },
   fixtures: fixtures
-};
+}

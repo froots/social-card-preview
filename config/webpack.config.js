@@ -1,8 +1,7 @@
-import webpack from 'webpack';
-import path from 'path';
-import HtmlPlugin from 'html-webpack-plugin';
+import path from 'path'
+import HtmlPlugin from 'html-webpack-plugin'
 
-const basePath = path.join(__dirname, '..', 'app');
+const basePath = path.join(__dirname, '..', 'app')
 
 export default ({
   plugins = [],
@@ -53,5 +52,5 @@ export default ({
       port: 8080,
       contentBase: path.join(basePath, 'assets')
     }
-  };
-};
+  }
+}
