@@ -16,7 +16,7 @@
           "args": ["--no-sandbox"]
         }
       },
-      "launch_url": "http://localhost:8080/test.html"
+      "launch_url": "http://localhost:8080/index.html"
     }
   }
 }

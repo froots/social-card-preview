@@ -1,7 +1,7 @@
 var StaticServer = require('static-server');
 
 var server = new StaticServer({
-  rootPath: './src',
+  rootPath: './assets',
   port: 8080,
   host: 'localhost'
 });
