@@ -1,5 +1,6 @@
 var chromedriver = require('chromedriver');
 var server = require('./server.js');
+var fixtures = require('./fixtures.js');
 
 module.exports = {
   before: function(done) {
@@ -11,5 +12,9 @@ module.exports = {
     chromedriver.stop();
     console.log('Stopping server.')
     server.stop(done);
-  }
+  },
+  initApp: function(data) {
+    window.init(data);
+  },
+  fixtures: fixtures
 };

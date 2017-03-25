@@ -1,28 +1,15 @@
 import { h, render, Component } from 'preact';
 
-const MetaData = () => {
+const MetaData = ({ data }) => {
   return (
     <div class="c-MetaData">
       <h2>Meta data for Twitter</h2>
-      <MetaDataTable />
+      <MetaDataTable data={data} />
     </div>
   );
 };
 
-const MetaDataTable = () => {
-  const metaData = {
-    'twitter': [
-      {
-        key: 'twitter:card',
-        value: ''
-      },
-      {
-        key: 'twitter:site',
-        value:''
-      }
-    ]
-  };
-
+const MetaDataTable = ({ data }) => {
   return (
     <table class="c-MetaDataTable">
       <thead>
@@ -32,7 +19,7 @@ const MetaDataTable = () => {
         </tr>
       </thead>
       <tbody>
-        {metaData['twitter'].map(({ key, value }) => (
+        {data['twitter'].map(({ key, value }) => (
           <MetaDataTableRow
             key={`metadata-twitter-${key}`}
             metaKey={key}
@@ -55,11 +42,13 @@ const MetaDataTableRow = ({ metaKey, metaValue }) => {
   );
 }
 
-render((
-  <div id="container">
-    <MetaData />
-  </div>
-), document.body);
+window.init = function(metaData) {
+  render((
+    <div id="container">
+      <MetaData data={metaData} />
+    </div>
+  ), document.body);
+}
 
 // function setBackground(backgroundPage) {
 //   backgroundPage.getSocialCardMetaData(injectMetaData);
