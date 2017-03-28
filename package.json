@@ -13,7 +13,7 @@
     "start": "static-server -p 8080 -d assets/",
     "pretest": "npm run webpack:prod",
     "test": "npm-run-all -l --parallel lint:js test:system test:unit",
-    "test:unit": "tape -r babel-register app/**/*.test.js",
+    "test:unit": "tape -r babel-register app/**/*.test.js | faucet",
     "test:system": "nightwatch",
     "webpack:dev": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --env=development",
     "webpack:prod": "webpack --config ./config/webpack.config.prod.babel.js"
@@ -28,6 +28,7 @@
     "eslint-config-standard": "^7.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
+    "faucet": "^0.0.1",
     "html-webpack-plugin": "^2.28.0",
     "nightwatch": "^0.9.14",
     "npm-run-all": "^4.0.2",

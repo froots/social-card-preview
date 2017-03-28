@@ -7,6 +7,11 @@ module.exports = {
     c.execute(initApp, [metaData])
     c.waitForElementVisible('.c-MetaDataTable', 1000)
     c.expect.element('[data-meta-value="twitter:card"]').text.to.equal('')
+    c.expect.element('[data-meta-value="twitter:site"]').text.to.equal('')
+    c.expect.element('[data-meta-value="twitter:title"]').text.to.equal('')
+    c.expect.element('[data-meta-value="twitter:description"]').text.to.equal('')
+    c.expect.element('[data-meta-value="twitter:image"]').text.to.equal('')
+    c.expect.element('[data-meta-value="twitter:alt"]').text.to.equal('')
     c.end()
   }
 }
