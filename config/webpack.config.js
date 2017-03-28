@@ -38,7 +38,7 @@ export default ({
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
+          test: /\.js$/,
           loader: 'babel-loader',
           include: [
             basePath
