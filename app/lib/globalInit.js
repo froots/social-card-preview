@@ -1,7 +1,8 @@
 import { UPDATE_METADATA } from '../stores/metaDataStore'
 
 export default function globalInit (state, emitter) {
-  window.init = (metaData) => {
+  const g = global || window
+  g.init = (metaData) => {
     emitter.emit(UPDATE_METADATA, metaData)
   }
 }
