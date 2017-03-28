@@ -10,7 +10,7 @@
     "dev": "npm run webpack:dev",
     "lint:js": "eslint ./app/**/*.js ./tests/**/*.js ./config/**/*.js",
     "prod": "npm run webpack:prod",
-    "start": "http-server assets/",
+    "start": "static-server -p 8080 -d assets/",
     "pretest": "npm run webpack:prod",
     "test": "npm-run-all -l --parallel lint:js test:system test:unit",
     "test:unit": "tape -r babel-register app/**/*.test.js",
@@ -36,5 +36,7 @@
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "choo": "^5.0.4"
+  }
 }
