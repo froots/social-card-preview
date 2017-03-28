@@ -12,7 +12,7 @@
     "prod": "npm run webpack:prod",
     "start": "static-server -p 8080 -d assets/",
     "pretest": "npm run webpack:prod",
-    "test": "npm-run-all -l --parallel lint:js test:system test:unit",
+    "test": "npm-run-all -l lint:js test:unit test:system",
     "test:unit": "tape -r babel-register app/**/*.test.js | faucet",
     "test:system": "nightwatch",
     "webpack:dev": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --env=development",

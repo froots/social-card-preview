@@ -7,21 +7,10 @@ test('metaDataStore initializes with default values', (t) => {
 
   const store = {}
   const emitter = nanobus()
-  const expected = {
-    twitter: {
-      'twitter:card': null,
-      'twitter:site': null,
-      'twitter:site:id': null,
-      'twitter:creator': null,
-      'twitter:creator:id': null,
-      'twitter:title': null,
-      'twitter:description': null,
-      'twitter:image': null,
-      'twitter:image:alt': null
-    }
-  }
+  const expected = {}
 
   metaDataStore(store, emitter)
+
   t.deepEqual(store.metaData, expected)
 })
 
@@ -30,6 +19,7 @@ test('metaDataStore merges provides changes', (t) => {
 
   const store = {}
   const emitter = nanobus()
+
   metaDataStore(store, emitter)
 
   emitter.on('render', () => t.pass('rendered'))
