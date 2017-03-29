@@ -1,7 +1,9 @@
 import path from 'path'
 import HtmlPlugin from 'html-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 const basePath = path.join(__dirname, '..', 'app')
+const assetsPath = path.join(__dirname, '..', 'assets')
 
 export default ({
   plugins = [],
@@ -9,12 +11,14 @@ export default ({
   devtool = 'eval'
 }) => {
   return {
+    context: basePath,
+
     entry: {
-      app: path.join(basePath, 'index.js')
+      popup: path.join(basePath, 'popup', 'index.js')
     },
 
     output: {
-      path: path.join(basePath, '..', 'assets'),
+      path: assetsPath,
       publicPath: '/',
       filename: '[name].js'
     },
@@ -24,8 +28,14 @@ export default ({
     plugins: [
       new HtmlPlugin({
         title: 'Social cards preview',
-        template: path.join(basePath, 'index.html')
-      })
+        template: path.join(basePath, 'popup', 'index.html')
+      }),
+
+      new CopyWebpackPlugin([
+        { from: 'manifest.json' },
+        { from: 'content/index.js', to: 'content.js' },
+        { from: 'background/index.js', to: 'background.js' }
+      ])
     ].concat(plugins),
 
     resolve: Object.assign({}, {

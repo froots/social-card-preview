@@ -9,7 +9,7 @@ export default function mainView (state, emit) {
 }
 
 function metaDataTable (state, emit) {
-  if (state.metaData === undefined || state.metaData.twitter === undefined) {
+  if (Object.keys(state.metaData).length === 0) {
     return html`
       <div class="loading">Loading...</div>
     `
@@ -24,7 +24,7 @@ function metaDataTable (state, emit) {
         </tr>
       </thead>
       <tbody>
-        ${metaDataTableRows(state.metaData.twitter, emit)}
+        ${metaDataTableRows(state.metaData, emit)}
       </tbody>
     </table>
   `

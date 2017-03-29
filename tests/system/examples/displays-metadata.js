@@ -1,5 +1,5 @@
 module.exports = {
-  'Before metadata is loaded, it shows a loading indicator': function(c) {
+  'Before metadata is loaded, it shows a loading indicator': function (c) {
     c.init()
     c.waitForElementVisible('.loading', 1000)
     c.expect.element('.loading').text.to.equal('Loading...')

@@ -1,7 +1,7 @@
 module.exports = {
   twitter: {
     empty: {
-      twitter: {
+      metaData: {
         'twitter:card': '',
         'twitter:site': ''
       }

@@ -14,7 +14,7 @@ module.exports = {
     server.stop(done)
   },
   initApp: function (data) {
-    window.init(data)
+    window.updateMetaData(data)
   },
   fixtures: fixtures
 }
