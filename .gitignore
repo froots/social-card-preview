@@ -1,4 +1,6 @@
+.DS_Store
 node_modules
 reports
 assets
+dist
 .vscode

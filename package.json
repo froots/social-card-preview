@@ -6,9 +6,11 @@
   "author": "Jim Newbery <james@tinnedfruit.com>",
   "license": "MIT",
   "scripts": {
+    "build": "npm run prod && npm run package",
     "clean": "rimraf ./assets/**/*",
     "dev": "npm run webpack:dev",
     "lint:js": "eslint ./app/**/*.js ./tests/**/*.js ./config/**/*.js",
+    "package": "zip -r dist/social-card-preview.zip ./assets",
     "preprod": "npm run clean",
     "prod": "npm run webpack:prod",
     "start": "static-server -p 8080 -d assets/",
