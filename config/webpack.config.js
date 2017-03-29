@@ -1,6 +1,7 @@
 import path from 'path'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 const basePath = path.join(__dirname, '..', 'app')
 const assetsPath = path.join(__dirname, '..', 'assets')
@@ -35,7 +36,9 @@ export default ({
         { from: 'manifest.json' },
         { from: 'content/index.js', to: 'content.js' },
         { from: 'background/index.js', to: 'background.js' }
-      ])
+      ]),
+
+      new ExtractTextPlugin('popup.css')
     ].concat(plugins),
 
     resolve: Object.assign({}, {
@@ -56,7 +59,10 @@ export default ({
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: 'css-loader'
+          })
         }
       ]
     },
