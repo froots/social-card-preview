@@ -53,6 +53,10 @@ export default ({
           include: [
             basePath
           ]
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
         }
       ]
     },
