@@ -3,7 +3,13 @@ module.exports = {
     empty: {
       metaData: {
         'twitter:card': '',
-        'twitter:site': ''
+        'twitter:site': '',
+        'twitter:site:id': '',
+        'twitter:creator': '',
+        'twitter:title': '',
+        'twitter:description': '',
+        'twitter:image': '',
+        'twitter:image:alt': ''
       }
     }
   }

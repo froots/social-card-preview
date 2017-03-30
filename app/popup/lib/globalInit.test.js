@@ -2,7 +2,7 @@ import test from 'tape'
 import td from 'testdouble'
 import globalInit from './globalInit'
 import nanobus from 'nanobus'
-import { UPDATE_METADATA } from '../stores/metaDataStore'
+import { UPDATE_METADATA } from '../actions'
 
 test('globalInit(), when DOMContentLoaded, retrieves metadata from the background page', (t) => {
   t.plan(1)

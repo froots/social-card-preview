@@ -9,24 +9,34 @@ export default function mainView (state, emit) {
 }
 
 function metaDataTable (state, emit) {
-  if (Object.keys(state.metaData).length === 0) {
+  if (state.uiState.loadingMetaData) {
     return html`
       <div class="loading">Loading...</div>
     `
   }
 
+  if (Object.keys(state.metaData).length === 0) {
+    return html`
+      <div class="c-MetaData">
+        This page contains no social card meta data
+      </div>
+    `
+  }
+
   return html`
-    <table class="c-MetaDataTable">
-      <thead>
-        <tr>
-          <th>Meta key</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${metaDataTableRows(state.metaData, emit)}
-      </tbody>
-    </table>
+    <div class="c-MetaData">
+      <table class="c-MetaDataTable">
+        <thead>
+          <tr>
+            <th>Meta key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${metaDataTableRows(state.metaData, emit)}
+        </tbody>
+      </table>
+    </div>
   `
 }
 

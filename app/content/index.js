@@ -10,6 +10,8 @@
     const keys = [
       'twitter:card',
       'twitter:site',
+      'twitter:site:id',
+      'twitter:creator',
       'twitter:title',
       'twitter:description',
       'twitter:image',

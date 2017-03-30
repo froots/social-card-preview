@@ -1,4 +1,4 @@
-import { UPDATE_METADATA } from '../stores/metaDataStore'
+import { UPDATE_METADATA } from '../actions'
 
 export default function globalInit (state, emitter) {
   const w = (global || window)

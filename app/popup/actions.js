@@ -1,0 +1,1 @@
+export const UPDATE_METADATA = 'UPDATE_METADATA'

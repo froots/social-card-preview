@@ -1,6 +1,6 @@
-const defaults = {}
+import { UPDATE_METADATA } from '../actions'
 
-export const UPDATE_METADATA = 'UPDATE_METADATA'
+const defaults = {}
 
 function metaDataStore (state, emitter) {
   state.metaData = Object.assign({}, defaults)
