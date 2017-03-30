@@ -1,0 +1,22 @@
+{
+  "src_folders": ["tests/system/examples"],
+  "output_folder": "reports",
+  "globals_path": "./tests/system/globals.js",
+  "selenium": {
+    "start_process": false
+  },
+  "test_settings": {
+    "default": {
+      "selenium_port": 9515,
+      "selenium_host": "localhost",
+      "default_path_prefix": "",
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": ["--no-sandbox"]
+        }
+      },
+      "launch_url": "http://localhost:8080/"
+    }
+  }
+}
