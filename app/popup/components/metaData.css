@@ -1,0 +1,23 @@
+.c-MetaData {
+  
+}
+
+.c-MetaDataTable {
+  border-collapse: collapse;
+}
+
+.c-MetaDataTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.c-MetaDataTable tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.c-MetaDataTable th {
+  text-align: left;
+}
+
+.c-MetaDataTable thead tr {
+  border-bottom-width: 2px;
+}

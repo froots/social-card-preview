@@ -1,3 +1,20 @@
+var TWITTER_KEYS = [
+  'twitter:card',
+  'twitter:site',
+  'twitter:site:id',
+  'twitter:creator',
+  'twitter:title',
+  'twitter:description',
+  'twitter:image',
+  'twitter:image:alt'
+]
+
+function checkMetaDataTableValues (c, fixture, keys) {
+  keys.forEach(function (key) {
+    c.expect.element('[data-meta-value="' + key + '"]').text.to.equal(fixture[key])
+  })
+}
+
 module.exports = {
   'Before metadata is loaded, it shows a loading indicator': function (c) {
     c.init()
@@ -23,14 +40,18 @@ module.exports = {
     c.init()
     c.execute(initApp, [metaData])
     c.waitForElementVisible('.c-MetaDataTable', 1000)
-    c.expect.element('[data-meta-value="twitter:card"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:site"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:site:id"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:creator"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:title"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:description"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:image"]').text.to.equal('')
-    c.expect.element('[data-meta-value="twitter:image:alt"]').text.to.equal('')
+    checkMetaDataTableValues(c, metaData.metaData, TWITTER_KEYS)
+    c.end()
+  },
+
+  'For a page with full Twitter metadata values, it displays the values in the table': function (c) {
+    var initApp = c.globals.initApp
+    var metaData = c.globals.fixtures.twitter.full
+
+    c.init()
+    c.execute(initApp, [metaData])
+    c.waitForElementVisible('.c-MetaDataTable', 1000)
+    checkMetaDataTableValues(c, metaData.metaData, TWITTER_KEYS)
     c.end()
   }
 }
