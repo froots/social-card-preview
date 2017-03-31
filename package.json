@@ -47,6 +47,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "choo": "^5.0.4"
+    "choo": "^5.0.4",
+    "tachyons": "^4.6.2"
   }
 }
