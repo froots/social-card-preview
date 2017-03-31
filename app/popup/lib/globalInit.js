@@ -9,6 +9,17 @@ export default function globalInit (state, emitter) {
       w.chrome.runtime === undefined ||
       w.chrome.runtime.getBackgroundPage === undefined) {
       w.updateMetaData = updateMetaData
+      if (process.env.NODE_ENV === 'development') {
+        updateMetaData({
+          metaData: {
+            'twitter:card': 'summary',
+            'twitter:site': '@jack',
+            'twitter:title': 'Card Title',
+            'twitter:description': 'Card description',
+            'twitter:image': 'http://placecage.com/500/300'
+          }
+        })
+      }
     } else {
       w.chrome.runtime.getBackgroundPage((background) => {
         background.getSocialCardMetaData(updateMetaData)
