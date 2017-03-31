@@ -2,6 +2,7 @@
   "src_folders": ["tests/system/examples"],
   "output_folder": "reports",
   "globals_path": "./tests/system/globals.js",
+  "page_objects_path": "./tests/system/page-objects",
   "selenium": {
     "start_process": false
   },

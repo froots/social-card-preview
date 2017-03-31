@@ -10,7 +10,7 @@
     "clean": "rimraf ./assets/**/*",
     "dev": "npm run webpack:dev",
     "lint:js": "eslint ./app/**/*.js ./tests/**/*.js ./config/**/*.js",
-    "package": "zip -r dist/social-card-preview.zip ./assets",
+    "package": "zip -r dist/social-card-preview.zip ./assets/",
     "preprod": "npm run clean",
     "prod": "npm run webpack:prod",
     "start": "static-server -p 8080 -d assets/",
@@ -18,8 +18,8 @@
     "test": "npm-run-all -l lint:js test:unit test:system",
     "test:unit": "tape -r babel-register app/**/*.test.js | faucet",
     "test:system": "nightwatch",
-    "webpack:dev": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --env=development",
-    "webpack:prod": "webpack --config ./config/webpack.config.prod.babel.js"
+    "webpack:dev": "webpack-dev-server --config ./config/webpack.config.dev.babel.js",
+    "webpack:prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.babel.js"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -47,6 +47,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "choo": "^5.0.4"
+    "choo": "^5.0.4",
+    "tachyons": "^4.6.2"
   }
 }

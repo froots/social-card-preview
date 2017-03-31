@@ -2,6 +2,7 @@ import path from 'path'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import { EnvironmentPlugin } from 'webpack'
 
 const basePath = path.join(__dirname, '..', 'app')
 const assetsPath = path.join(__dirname, '..', 'assets')
@@ -27,6 +28,10 @@ export default ({
     devtool,
 
     plugins: [
+      new EnvironmentPlugin({
+        'NODE_ENV': 'development'
+      }),
+
       new HtmlPlugin({
         title: 'Social cards preview',
         template: path.join(basePath, 'popup', 'index.html')
