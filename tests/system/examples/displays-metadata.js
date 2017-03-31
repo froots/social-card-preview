@@ -15,7 +15,7 @@ module.exports = {
 
     pg.startExtension()
     pg.waitForElementVisible('@loading', 1000)
-    pg.expect.element('@loading').text.to.equal('Loading...')
+    pg.expect.element('@loading').text.to.equal('Loading page metadata…')
 
     c.end()
   },
@@ -25,7 +25,7 @@ module.exports = {
 
     pg.startExtension({})
     pg.waitForElementVisible('@metaData', 1000)
-    pg.expect.element('@metaData').text.to.equal('This page contains no social card meta data')
+    pg.expect.element('@metaData').text.to.equal('This page contains no social card meta data.')
 
     c.end()
   },

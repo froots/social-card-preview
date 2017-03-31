@@ -3,7 +3,7 @@ import metaData from '../components/metaData'
 
 export default function mainView (state, emit) {
   return html`
-    <div id="root" class="main">
+    <div id="root">
       ${metaData(state, emit)}
     </div>
   `

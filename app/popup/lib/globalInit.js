@@ -14,9 +14,12 @@ export default function globalInit (state, emitter) {
           metaData: {
             'twitter:card': 'summary',
             'twitter:site': '@jack',
-            'twitter:title': 'Card Title',
-            'twitter:description': 'Card description',
-            'twitter:image': 'http://placecage.com/500/300'
+            'twitter:site:id': '@jack',
+            'twitter:creator': '@jack',
+            'twitter:title': '30 Reasons Why Twitter is Bad For Your Health',
+            'twitter:description': 'Should you even use Twitter any more? Will you grow fungus on your extremities if you do? Let\'s find out!',
+            'twitter:image': 'http://www.placecage.com/500/300',
+            'twitter:image:alt': 'This man used Twitter too much'
           }
         })
       }
