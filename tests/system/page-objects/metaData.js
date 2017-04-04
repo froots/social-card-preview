@@ -17,6 +17,7 @@ module.exports = {
   elements: {
     loading: '.loading',
     metaData: '.c-MetaData',
-    metaDataTable: '.c-MetaDataTable'
+    metaDataTable: '.c-MetaDataTable',
+    cardPreviewTwitter: '.c-CardPreview--Twitter'
   }
 }

@@ -13,6 +13,14 @@ module.exports = {
       }
     },
 
+    summary: {
+      metaData: {
+        'twitter:card': 'summary',
+        'twitter:title': '30 Reasons Why Twitter is Bad for Your Health',
+        'twitter:description': 'Should you even use Twitter any more? Will you grow fungus on your extremities if you do? Let\'s find out!'
+      }
+    },
+
     full: {
       metaData: {
         'twitter:card': 'summary',
